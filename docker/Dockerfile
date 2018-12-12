@@ -1,6 +1,6 @@
 FROM node:carbon
 
-MAINTAINER Counterparty Developers <dev@counterparty.io>
+MAINTAINER c0banparty Developers <39722780+c0ban-project@users.noreply.github.com>
 
 RUN apt update
 RUN apt install -y libzmq3-dev gcc g++ python3 build-essential

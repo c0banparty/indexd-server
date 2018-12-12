@@ -8,7 +8,7 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Counterparty Developers",
+  "author": "c0banparty Developers",
   "license": "MIT",
   "dependencies": {
     "bech32": "^1.1.3",

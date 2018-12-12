@@ -4,6 +4,7 @@ require('dotenv').load({path: process.env.CONFIG_FILE ? process.env.CONFIG_FILE 
 
 let TESTNET = (process.env.TESTNET === '1' || (process.env.TESTNET && process.env.TESTNET.toLowerCase() === 'true'))
 let REGTEST = (process.env.REGTEST === '1' || (process.env.REGTEST && process.env.REGTEST.toLowerCase() === 'true'))
+let NETWORK = process.env.NETWORK_COIN
 
 if (TESTNET && REGTEST) {
   throw new Error('Cannot specify REGTEST and TESTNET at the same time')
@@ -26,7 +27,7 @@ service((err, adapter) => {
 
   // start the API server
   debug('starting API server')
-  app.use(api(adapter, {testnet: TESTNET, regtest: REGTEST}))
+  app.use(api(adapter, {network: NETWORK, testnet: TESTNET, regtest: REGTEST}))
   app.listen(process.env.SERVER_PORT);
   debug("App listening on port "+process.env.SERVER_PORT);
 })
